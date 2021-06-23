@@ -19,8 +19,8 @@ class BooksSpider(scrapy.Spider):
     def parse_book_page(self, response):
         item = {}
         item["title"] = product.css("h1 ::text").extract_first()
-        item['category'] = response.css("div.meta-art > a ::text").extract_first()
-        item['description'] = response.css("div.entry > p::text"
-            ).extract_first()
-        item['linksFshare'] = response.css('a.autohyperlink ::text').extract_first()
+        #item['category'] = response.css("div.meta-art > a ::text").extract_first()
+        #item['description'] = response.css("div.entry > p::text"
+        #    ).extract_first()
+        #item['linksFshare'] = response.css('a.autohyperlink ::text').extract_first()
         yield item
